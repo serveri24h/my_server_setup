@@ -15,12 +15,13 @@ apt install htop -y
 ########################################
 
 #make adminuser
+clear
 adduser admin
 usermod -a -G sudo admin
 
 
 #Prohibit root login
-python tools/prohibit_root_login.py
+python3 tools/prohibit_root_login.py
 systemctl restart sshd
 
 #Change user
