@@ -2,7 +2,7 @@
 ###            TOOLS                  ###
 #########################################
 
-if [ "$EUID" == 0]; then
+if [ "$EUID" == 0 ]; then
     #install rust
     echo "Install rust? (y/N)"
     read install_rust
@@ -69,3 +69,4 @@ if [ "$EUID" == 0]; then
     fi
 else
     echo " This script needs to be run with sudo privilidges"
+fi
