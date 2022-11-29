@@ -2,7 +2,7 @@
 ###            TOOLS                  ###
 #########################################
 
-if [ "$EUID" == 0]; then
+if [ "$EUID" == 0 ]; then
     #install rust
     echo "Install rust? (y/N)"
     read install_rust

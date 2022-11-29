@@ -9,6 +9,17 @@
 apt install build-essential -y
 apt install htop -y
 
+########################################
+####           FIREWALL             ####
+########################################
+
+apt install ufw
+ufw default allow outgoing
+ufw default deny incoming
+ufw allow ssh
+ufw allow http/tcp
+ufw enable -y
+
 
 ########################################
 ####            USERS               ####
