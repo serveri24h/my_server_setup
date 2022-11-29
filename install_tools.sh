@@ -69,3 +69,4 @@ if [ "$EUID" == 0 ]; then
     fi
 else
     echo " This script needs to be run with sudo privilidges"
+fi
