@@ -5,35 +5,56 @@
 ## First update and uprade apt and download git
 ##       -> then clone this repo
 
+#Create log-file in home-folder
+logfile="/home/setup-logs.txt"
+touch $logfile
+
 #update package manager
-apt install build-essential -y
-apt install htop -y
+echo "(1) Initiating"
+echo "####################
+INITIAL SETUP
+####################
+" >> $logfile
+
+apt install build-essential -y >> $logfile
+apt install htop -y >> $logfile
 
 ########################################
 ####           FIREWALL             ####
 ########################################
 
-apt install ufw
-ufw default allow outgoing
-ufw default deny incoming
-ufw allow ssh
-ufw allow http/tcp
-ufw enable -y
+echo "(2) Firewall setup"
+echo "####################
+FIREWALL SETUP
+####################
+" >> $logfile
+
+apt install ufw  >> $logfile
+ufw default allow outgoing  >> $logfile
+ufw default deny incoming  >> $logfile
+ufw allow ssh  >> $logfile
+ufw allow http/tcp  >> $logfile
+ufw enable -y  >> $logfile
 
 
 ########################################
 ####            USERS               ####
 ########################################
 
+echo "(3) User setup"
+echo "####################
+USER SETUP
+####################
+" >> $logfile
+
 #make adminuser
-clear
 adduser admin
-usermod -a -G sudo admin
+usermod -a -G sudo admin >> $logfile
 
 
 #Prohibit root login
-python3 tools/prohibit_root_login.py
-systemctl restart sshd
+python3 tools/prohibit_root_login.py >> $logfile
+systemctl restart sshd >> $logfile
 
 #Change user
 su admin
