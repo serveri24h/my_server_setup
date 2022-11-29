@@ -29,12 +29,12 @@ FIREWALL SETUP
 ####################
 " >> $logfile
 
-apt install ufw  >> $logfile
+apt install ufw -y  >> $logfile
 ufw default allow outgoing  >> $logfile
 ufw default deny incoming  >> $logfile
 ufw allow ssh  >> $logfile
 ufw allow http/tcp  >> $logfile
-ufw enable -y  >> $logfile
+ufw enable
 
 
 ########################################
