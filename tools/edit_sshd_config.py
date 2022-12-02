@@ -27,7 +27,6 @@ def change_atribute(row_name):
 
 if __name__ == '__main__':
     x = sys.argv
-    print("tässä", x)
     if len(x) == 2 and x[1] in commands.keys():
         try:
             change_atribute(commands[x[1]])
