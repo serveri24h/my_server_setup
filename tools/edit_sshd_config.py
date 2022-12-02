@@ -28,7 +28,7 @@ def change_atribute(row_name):
             f.writelines(data)
             print("Root-Login prohibited")
 
-if __name__ == '__main___':
+if __name__ == '__main__':
     x = sys.argv
     if len(x) == 1 and x[0] in commands.keys():
         change_atribute(commands[x[0]])
