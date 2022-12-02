@@ -2,13 +2,10 @@ import sys
 
 file_name = "/etc/ssh/sshd_config"
 
-
 commands = {
     'root_log': "PermitRootLogin",
     'pswd_log': "PasswordAuthentication"
 }
-
-
 
 
 def change_atribute(row_name):
@@ -30,7 +27,11 @@ def change_atribute(row_name):
 
 if __name__ == '__main__':
     x = sys.argv
-    if len(x) == 1 and x[0] in commands.keys():
-        change_atribute(commands[x[0]])
+    print("tässä", x)
+    if len(x) == 2 and x[1] in commands.keys():
+        try:
+            change_atribute(commands[x[1]])
+        except Exception as e:
+            print("Something failed with error: ", e)
     else:
         print("Failed arguments...")
