@@ -53,7 +53,7 @@ usermod -a -G sudo admin >> $logfile
 
 
 #Prohibit root login
-python3 tools/prohibit_root_login.py >> $logfile
+python3 tools/edit_sshd_config.py root_log >> $logfile
 systemctl restart sshd >> $logfile
 
 #Change user
