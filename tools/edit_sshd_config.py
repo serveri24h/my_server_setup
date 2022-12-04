@@ -23,7 +23,10 @@ def change_atribute(row_name):
     else:
         with open(file_name, "w") as f:
             f.writelines(data)
-            print("Root-Login prohibited")
+            if row_name=='root_log':
+                print("Root-Login prohibited")
+            elif row_name=='pswd_log':
+                print("Password-Login prohibited")
 
 if __name__ == '__main__':
     x = sys.argv
